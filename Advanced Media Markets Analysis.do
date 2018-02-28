@@ -3,7 +3,7 @@ set more off
 capture log close 
 cd "L:\EC373"
 
-log using ".\BYRON.log", replace 
+log using ".\AMMP.log", replace 
 
 insheet using Political_ad_instances.csv, clear
 
@@ -90,7 +90,7 @@ tab market_count if hasTed==1
 
 * Part B
 browse if wp_identifier==740
-* All good in the hood
+* Sanity-check passed (barely)
 
 * Part C
 insheet using Political_ad_descriptions.csv, clear
@@ -167,7 +167,7 @@ tab message if candidate=="Bernie Sanders"
 generate MA = strpos(location,"MA")>0
 generate maLAST = strpos(start_time,"2016-02-29")>0|strpos(start_time,"2016-02-28")>0|strpos(start_time,"2016-02-27")>0|strpos(start_time,"2016-02-26")>0|strpos(start_time,"2016-02-25")>0|strpos(start_time,"2016-02-24")>0|strpos(start_time,"2016-02-23")>0
 generate maPEN = strpos(start_time,"2016-02-26")>0|strpos(start_time,"2016-02-17")>0|strpos(start_time,"2016-02-18")>0|strpos(start_time,"2016-02-19")>0|strpos(start_time,"2016-02-20")>0|strpos(start_time,"2016-02-21")>0|strpos(start_time,"2016-02-22")>0
-
+* From this, it appears that candidates did concentrate advertisements towards the end of the race
 
 table message, by(candidate)
 
