@@ -3,7 +3,7 @@ set more off
 capture log close 
 cd "L:\EC373"
 
-log using ".\PS2.log", replace 
+log using ".\FEproject.log", replace 
 
 *** START ***
 
