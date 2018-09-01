@@ -103,12 +103,12 @@ save MASTER.dta, replace
 * Part D
 tab sponsor if message=="con" & candidate=="Donald Trump"
 display r(r)
-* 29 different organizations funded adds against Donald Trump.
+* 29 different organizations funded ads against Donald Trump.
 tab sponsor if message=="pro" & candidate=="Donald Trump"
 * From this command, it looks like Donald J. Trump For President
-* funded over 7400 of the roughly 7800 adds which are pro Donald,
+* funded over 7400 of the roughly 7800 ads which are pro Donald,
 * so it appears that he did self fund.
-* Note: this is for adds where Donald Trump was the main focus.
+* Note: this is for ads where Donald Trump was the main focus.
 
 * Part E
 
@@ -137,7 +137,7 @@ disp 14806/(10993+14806)
 * Republican States
 generate isRepublican = strpos(location,"NC")>0|strpos(location,"SC")>0
 tabulate message if isRepublican==1
-* In Republican states, 53% of the adds were pro, 17% were con and 19% were mixed.
+* In Republican states, 53% of the ads were pro, 17% were con and 19% were mixed.
 tabulate message if isRepublican==1 & (candidate=="Bernie Sanders"|candidate=="Hillary Clinton")
 * 99% of the ads about Democrats were positive in Republican States.
 tabulate message if isRepublican==1 & (candidate=="John Kasich"|candidate=="Ted Cruz"|candidate=="Marco Rubio"|candidate=="Donald Trump")
@@ -145,7 +145,7 @@ tabulate message if isRepublican==1 & (candidate=="John Kasich"|candidate=="Ted 
 
 * Ads were generally much more pro in Democratic and swing states as opposed to 
 * Republican states. Democratic ads were generally much more positive. 
-* Republican adds were generaly much more mixed, especially in Republican 
+* Republican ads were generaly much more mixed, especially in Republican 
 * States. For my R/D/S classifications, I just went based off of the identity
 * of the state.
 
@@ -158,7 +158,7 @@ tab message if candidate=="Donald Trump"
 tab message if candidate=="Bernie Sanders"
 * Bernie Sanders received the most pro messages.
 * Donald Trump received the most con messages.
-* Note: this is among adds where each candidate was the main focus.
+* Note: this is among ads where each candidate was the main focus.
 
 *** Question 3 ***
 
